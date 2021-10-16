@@ -12,7 +12,7 @@ You can assume:
 - There may be more than one root category (a category with no parents)
 
 This is a formatted JSON sample input, with one sample child (with both a parent and a child), one child with no children, and sample parent (with no parent)
-
+```
 [
   {
     "name": "Accessories",
@@ -30,10 +30,10 @@ This is a formatted JSON sample input, with one sample child (with both a parent
     "parent_id": null
   }
 ]
-
+```
 
 This is a formatted JSON sample solution for the input above:
-
+```
 [
   {
     "name": "Men",
@@ -51,6 +51,8 @@ This is a formatted JSON sample solution for the input above:
     "parent_id": 1
   }
 ]
+
+```
 When submitting your solution, please provide it as a file containing the function or method which will perform the proper calculations, so we can run tests against it. Below is the general format of an acceptable submission in Javascript:
 
 module.exports = function sortCategoriesForInsert (inputJson) {
