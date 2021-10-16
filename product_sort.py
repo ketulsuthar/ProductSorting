@@ -27,8 +27,6 @@ def find_parent_product(p, prods,  products, processed, stack=[]):
 
 def process_products_data(products):
     """
-
-
     :param products:
     :return:
     """
