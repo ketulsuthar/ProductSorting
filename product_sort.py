@@ -1,3 +1,4 @@
+import json
 
 def find_parent_product(p, prods,  products, processed, stack=[]):
     """
@@ -45,32 +46,5 @@ def process_products_data(products):
             if not procd:
                 result.append(products[index])
 
+    result = json.dumps(result, indent=4)
     return result
-
-
-if __name__ == "__main__":
-    data = [
-              {
-                "name": "Men",
-                "id": 20,
-                "parent_id": 51
-              },
-              {
-                "name": "Accessories",
-                "id": 1,
-                "parent_id": 20,
-              },
-              {
-                "name": "Watches",
-                "id": 57,
-                "parent_id": 1
-              },
-              {
-                "name": "Watches1",
-                "id": 51,
-                "parent_id": None
-              },
-        ]
-
-
-    print(process_products_data(data))
