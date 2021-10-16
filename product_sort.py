@@ -1,11 +1,12 @@
 
 def find_parent_product(p, prods,  products, processed, stack=[]):
     """
-
+    it serach all the prodcut until parent found for it.
     :param p: need to process product
     :param prods: dict of child : parent prodcut
     :param products: list of original products
-    :param processed: process products index
+    :param processed: set of process products id
+    :param stack: list of proceed products
     :return: return list of child to parent products
     """
     id = p['id']
@@ -16,13 +17,10 @@ def find_parent_product(p, prods,  products, processed, stack=[]):
         stack.append(products[index])
         processed.add(id)
         index, _ = prods[parent_id]
-        print(index)
         find_parent_product(products[index], prods, products, processed, stack)
     else:
         stack.append(products[index])
         processed.add(id)
-
-    print(stack)
     return stack
 
 def process_products_data(products):
@@ -32,8 +30,8 @@ def process_products_data(products):
     """
     result = []
     prods = {}
-
     processed = set()
+
     for i, p in enumerate(products):
         prods[p['id']] = (i, p['parent_id'])
     for p in products:
