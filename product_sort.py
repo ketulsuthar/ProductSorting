@@ -24,9 +24,9 @@ def find_parent_product(p, prods,  products, processed, stack=[]):
     return stack
 
 def process_products_data(products):
-    """
-    :param products:
-    :return:
+    """ it prcoess list of product and sore product based on parent product
+    :param products: list of products
+    :return: return sorted product.
     """
     result = []
     prods = {}
@@ -46,3 +46,31 @@ def process_products_data(products):
                 result.append(products[index])
 
     return result
+
+
+if __name__ == "__main__":
+    data = [
+              {
+                "name": "Men",
+                "id": 20,
+                "parent_id": 51
+              },
+              {
+                "name": "Accessories",
+                "id": 1,
+                "parent_id": 20,
+              },
+              {
+                "name": "Watches",
+                "id": 57,
+                "parent_id": 1
+              },
+              {
+                "name": "Watches1",
+                "id": 51,
+                "parent_id": None
+              },
+        ]
+
+
+    print(process_products_data(data))
